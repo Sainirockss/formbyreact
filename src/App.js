@@ -1,7 +1,8 @@
 
 import './App.css';
 import { useState } from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [formdata, setFormdata] = useState({
     firstname: "",
@@ -31,12 +32,13 @@ function App() {
   function submithandler(event) {
     event.preventDefault();
     console.log(formdata);
+    toast("form submitted sucessfully")
   }
 
   return (
     <div className='flex flex-col items-center'>
       <div>
-        <form onSubmit={submithandler}>
+        <form onSubmit={submithandler} >
           <label htmlFor='firstname'>Firstname</label>
           <br />
           <input
@@ -60,6 +62,7 @@ function App() {
             value={formdata.lastname}
             onChange={changehandler}
             className='outline'
+            required
           />
           <br />
 
@@ -73,6 +76,7 @@ function App() {
             value={formdata.email}
             onChange={changehandler}
             className='outline'
+            required
           />
           <br />
 
@@ -84,6 +88,7 @@ function App() {
             value={formdata.country}
             onChange={changehandler}
             className='outline'
+            required
           >
             <option value='india'>India</option>
             <option value='united states'>United States</option>
@@ -102,6 +107,7 @@ function App() {
             value={formdata.address}
             onChange={changehandler}
             className='outline'
+            required
           />
           <br />
 
@@ -115,6 +121,7 @@ function App() {
             value={formdata.city}
             onChange={changehandler}
             className='outline'
+            required
           />
           <br />
 
@@ -128,6 +135,7 @@ function App() {
             value={formdata.state}
             onChange={changehandler}
             className='outline'
+            required
           />
           <br />
 
@@ -141,6 +149,7 @@ function App() {
             value={formdata.postalcode}
             onChange={changehandler}
             className='outline'
+            required
           />
           <br />
 
